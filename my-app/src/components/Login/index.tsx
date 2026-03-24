@@ -1,6 +1,7 @@
-import { useInput } from '../hooks/useinput';
+import { useInput } from '../../hooks/useinput';
 import { useContext } from 'react';
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../../contexts/UserContext';
+import { Form, Input, Button } from './styles';
 
 function Login(){
     const nomeDoUsuario = useInput();
@@ -12,13 +13,13 @@ function Login(){
         setUsuario({nome: nomeDoUsuario.valor, estaLogado: true});
     }
     return(
-        <form onSubmit={(handleLogin)}>
-            <input type="text"
+        <Form onSubmit={(handleLogin)}>
+            <Input type="text"
             placeholder="Digite seu nome"
             value={nomeDoUsuario.valor}
             onChange={nomeDoUsuario.onChange}/>
-            <button type="submit" className="botao">Entrar</button>
-        </form>
+            <Button type="submit">Entrar</Button>
+        </Form>
     )
 }
 export default Login;

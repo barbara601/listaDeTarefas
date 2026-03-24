@@ -1,0 +1,36 @@
+/*.li {
+  background: #f7f7f7;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}*/
+
+/*.concluida {
+  text-decoration: line-through;
+  color: gray;
+}*/
+
+/*.li button {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}*/
+
+/*.li button:first-child {
+  background: #48bb78;
+  color: white;
+}*/
+
+/*.li button:last-child {
+  background: #d81e1e;
+  color: white;
+}*/
+
+/*.li button:last-child:hover {
+  background: #c01a1a;
+}*/

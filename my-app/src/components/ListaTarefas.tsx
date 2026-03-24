@@ -3,9 +3,9 @@ import { useContext, useEffect, useState, useMemo } from 'react';
 import Tarefa from './Tarefa'
 import { useInput } from '../hooks/useinput';
 import { UserContext } from '../contexts/UserContext';
-import './ListaTarefas.css';
+import styles from './ListaTarefas.module.css';
 
-const API_URL = 'https://crudcrud.com/api/b2a3957cbf8443d6857adf9fe3a4235e/tarefas';
+const API_URL = 'https://crudcrud.com/api/4d741b82fb10470ca113afb2974c6b04/tarefas';
 
 function ListaTarefas() {
     type TarefaType = {
@@ -92,14 +92,14 @@ function ListaTarefas() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Digite uma nova tarefa"
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input className={styles.input} type="text" placeholder="Digite uma nova tarefa"
         value = {tarefa.valor}
         onChange = {tarefa.onChange}
         />
-        <button type="submit" className="botao">Adicionar</button>
+        <button className={styles.botao} type="submit">Adicionar</button>
       </form>
-      <div className="filtros">
+      <div className={styles.filtros}>
         <button onClick={() => setFiltro('todas')}>Todas</button>
         <button onClick={() => setFiltro('concluidas')}>Concluídas</button>
         <button onClick={() => setFiltro('pendentes')}>Pendentes</button>
@@ -107,7 +107,6 @@ function ListaTarefas() {
       <ul>
         {tarefasFiltradas.map(tarefa => <Tarefa key={tarefa._id} texto={tarefa.texto} concluida={tarefa.concluida} onToggle={() => alternarConcluida(tarefa._id)} onRemove={() => removerTarefa(tarefa._id)} />)}
       </ul>
-      
     </>
   )
 }
